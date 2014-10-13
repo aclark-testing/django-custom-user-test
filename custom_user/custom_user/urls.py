@@ -13,4 +13,6 @@ urlpatterns = patterns('',
     (r'^accounts/login/', 'custom_user.custom_user.views.signin'),
 
     (r'^logout/', 'custom_user.custom_user.views.signout'),
+
+    (r'^password_change_form/', 'custom_user.custom_user.views.password_change_form'),
 )

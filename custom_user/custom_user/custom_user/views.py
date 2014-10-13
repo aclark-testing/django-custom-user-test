@@ -38,3 +38,7 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('/')
+
+
+def password_change_form(request):
+    return render(request, 'registration/password_change_form.html')
