@@ -22,6 +22,7 @@ def signin(request):
             if user.is_active:
                 login(request, user)
                 # Redirect to a success page.
+                return render(request, 'home.html')
             else:
                 # Return a 'disabled account' error message
                 pass
