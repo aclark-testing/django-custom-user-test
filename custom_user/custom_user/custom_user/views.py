@@ -1,7 +1,10 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
+from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 from django.shortcuts import render
+
 
 # Create your views here.
 
@@ -22,7 +25,7 @@ def signin(request):
             if user.is_active:
                 login(request, user)
                 # Redirect to a success page.
-                return render(request, 'home.html')
+                return redirect('/')
             else:
                 # Return a 'disabled account' error message
                 pass
@@ -30,3 +33,8 @@ def signin(request):
             # Return an 'invalid login' error message.
             pass
     return render(request, 'signin.html')
+
+
+def signout(request):
+    logout(request)
+    return redirect('/')
